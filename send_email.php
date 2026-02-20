@@ -26,14 +26,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // SMTP Configuration
+    $mail = new PHPMailer(true);
     $mail->isSMTP();
     $mail->Host = 'mail.bayfordsuites.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'booking@bayfordsuites.com';
     $mail->Password = '(&JikvzFy5~=+@3o';
     $mail->SMTPSecure = 'ssl';
-    $mailClient->Port = 465;
-    // $mail = new PHPMailer;
+    $mail->Port = 465;
     // $mail->isSMTP();
     // $mail->Host = 'smtp.booking@Trend's place Hotel & Suites.com';  // SMTP host
     // $mail->SMTPAuth = true;

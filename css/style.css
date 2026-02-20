@@ -156,7 +156,7 @@
 
         /* Header & Navigation */
         header {
-            position: static;
+            position: sticky;
             top: 0;
             left: 0;
             width: 100%;
@@ -268,7 +268,7 @@
         .hero {
             height: 100vh;
             min-height: 700px;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Images/exterior.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Images/exterior.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             color: white;
@@ -546,7 +546,15 @@
         /* Contact & Booking */
         .contact-booking {
             padding: 100px 0;
-            background: white;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../Images/Reception.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .contact-booking .section-header h2,
+        .contact-booking .section-header p {
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .contact-container {
@@ -613,6 +621,19 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
             transition: var(--transition);
+            box-sizing: border-box; /* ensure consistent sizing for text and select elements */
+        }
+
+        /* Specifically target select to ensure height matches input */
+        select.form-control {
+            height: 52px; /* approximate height of input fields */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
         }
 
         .form-control:focus {
@@ -733,12 +754,6 @@
                 font-size: 2.2rem;
             }
 
-            .nav-menu {
-                gap: 25px;
-            }
-        }
-
-        @media (max-width: 768px) {
             .header-container {
                 padding: 15px 0;
             }
@@ -748,11 +763,11 @@
             }
 
             .nav-menu {
-                position: fixed;
-                top: 80px;
+                position: absolute;
+                top: 100%;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 80px);
+                height: 100vh;
                 background: white;
                 flex-direction: column;
                 justify-content: flex-start;
@@ -765,7 +780,9 @@
             .nav-menu.active {
                 left: 0;
             }
+        }
 
+        @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
