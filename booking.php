@@ -89,7 +89,7 @@
                                         ₦100,000/night</option>
                                     <option value="Executive Suite" data-price="120000">Executive Suite - ₦120,000/night
                                     </option>
-                                    <option value="Event Hall" data-price="500000">Event Hall - ₦500,000/day</option>
+                                    <!-- <option value="Event Hall" data-price="500000">Event Hall - ₦500,000/day</option> -->
                                 </select>
                                 <input type="hidden" id="pricePerNight" name="pricePerNight" value="70000">
                             </div>
